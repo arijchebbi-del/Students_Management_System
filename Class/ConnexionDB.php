@@ -1,7 +1,7 @@
 <?php
 class ConnexionDB
 {
-    private static $_dbname = "atelier_php";
+    private static $_dbname = "atelier_db";
     private static $_user = "root";
     private static $_pwd = "";
     private static $_host = "localhost";
