@@ -1,6 +1,7 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
-<html lang="en">
+    <?php $mode = $_COOKIE['mode'] ?? 'dark'; ?>
+<html  data-bs-theme="<?=  $mode ?>" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
