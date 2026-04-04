@@ -126,21 +126,29 @@ $students = $result->fetchAll(PDO::FETCH_ASSOC);
 
 <script>
 $(document).ready(function() {
-  var table = $('#studentsTable').DataTable({
-    dom: 'Bfrtip',
-    buttons: ['copy', 'excel', 'csv', 'pdf'],
-    paging: true,
-    searching: true,
-    ordering: true
-  });
+    // Initialize DataTable with buttons
+    var table = $('#studentsTable').DataTable({
+        dom: 'Bfrtip',
+        buttons: ['copy', 'excel', 'csv', 'pdf'],
+        paging: true,
+        searching: true,
+        ordering: true
+    });
 
-  $('#searchInput').on('keyup', function() {
-    table.search(this.value).draw();
-  });
+    // Search input
+    $('#searchInput').on('keyup', function() {
+        table.search(this.value).draw();
+    });
 
-  $('#filterBtn').on('click', function() {
-    alert('Filter coming soon 😉');
-  });
+    // Filter button: example by section
+    $('#filterBtn').on('click', function() {
+        var section = prompt("Enter section designation to filter (e.g., GL, RT, etc.):");
+        if(section) {
+            table.column(3).search(section, true, false).draw(); // column index 3 = section
+        } else {
+            table.column(3).search('').draw(); // reset filter
+        }
+    });
 });
 </script>
 
