@@ -45,7 +45,7 @@ $sections = $db->query("SELECT * FROM sections ORDER BY designation ASC")->fetch
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Students Management System</a>
+    <a class="navbar-brand" href="index.php">Students Management System</a>
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link" href="home.php">Home</a></li>
@@ -102,7 +102,7 @@ $sections = $db->query("SELECT * FROM sections ORDER BY designation ASC")->fetch
             <td class="text-center">
               <a href="student_info.php?id=<?= $row['id'] ?>" class="text-info me-2"><i class="bi bi-info-circle"></i></a>
               <?php if ($role === 'admin'): ?>
-                <a href="delete_student.php?id=<?= $row['id'] ?>" class="text-danger me-2"><i class="bi bi-trash"></i></a>
+                <a href="operations/delete_student.php?id=<?= $row['id'] ?>" class="text-danger me-2"><i class="bi bi-trash"></i></a>
                 <a href="edit_student.php?id=<?= $row['id'] ?>" class="text-warning"><i class="bi bi-pencil-square"></i></a>
               <?php endif; ?>
             </td>
