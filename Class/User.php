@@ -12,11 +12,13 @@ class User
      * @param int $id
      * @param string $email
      * @param string $password
+     * @param string $role
      */
     public function __construct(
         protected int $id = 0,
         protected string $email = '',
         protected string $password = '',
+        protected string $role = '',
     ) {
         self::$nbInstance++;
     }
@@ -35,6 +37,10 @@ class User
     public function getId(): string
     {
         return $this->id;
+    }
+    public function getRole(): string
+    {
+        return $this->role;
     }
 
     public function getEmail(): string

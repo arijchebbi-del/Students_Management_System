@@ -25,18 +25,11 @@ try {
         if ($password === $user->password) {
             $_SESSION['user_id'] = $user->id;
             $_SESSION['user_email'] = $user->email;
+            $_SESSION['role'] = $user->role;
 
             // redirect after login
             header('Location: home.php');
             exit;
-
-        // If your database stores hashed passwords (recommended):
-        // if (password_verify($password, $user->password)) {
-        //     $_SESSION['user_id'] = $user->id;
-        //     $_SESSION['user_email'] = $user->email;
-        //     header('Location: home.php');
-        //     exit;
-        // }
 
         } else {
             echo "Incorrect password!";
@@ -49,3 +42,4 @@ try {
 } catch (PDOException $e) {
     die("Erreur: " . $e->getMessage());
 }
+?>

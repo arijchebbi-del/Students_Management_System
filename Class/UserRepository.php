@@ -13,7 +13,7 @@ class UserRepository extends Repository
         $data = $stmt->fetch(PDO::FETCH_OBJ);
 
         if ($data) {
-            return new User($data->id, $data->email, $data->password);
+            return new User($data->id, $data->email, $data->password,$data->role);
         }
         return null;
     }
